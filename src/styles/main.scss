@@ -1,0 +1,64 @@
+
+@import "colors";
+
+$gunmetal: #293132ff;
+$ash-gray: #a3bbadff;
+$jasper: #d5573bff;
+$glaucous: #7d82b8ff;
+$neon-blue: #5465ffff;
+
+$logoSize: 160px;
+$fontSize: 3.4rem;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $blue-gray-50;
+  font-size: 16px;
+}
+
+.logo-box {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 12px;
+  width: $logoSize;
+  height: $logoSize;
+  padding: 12px;
+  background-color: $gunmetal;
+  font-size: $fontSize;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  font-family: "Roboto Mono", sans-serif;
+  font-weight: 900;
+
+  .logo-row {
+    float: left;
+    width: 100%;
+  }
+
+  .logo-column {
+    float: left;
+  }
+
+  div {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // background: teal;
+  }
+
+  .ctrl {
+    // letter-spacing: 9px;
+  }
+  .leo {
+    // letter-spacing: 9px;
+  }
+  .del {
+    // letter-spacing: 9px;
+  }
+}
