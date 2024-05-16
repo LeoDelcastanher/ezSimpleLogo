@@ -49,7 +49,8 @@ function setColumnsWidth(rowElement) {
 function getColumnHeight() {
     const rowCount = logoBox.find('.logo-row').length;
     const paddingSize = parseInt(logoBox.css('padding-top'));
-    return (logoBox.height() - (rowCount-1) * paddingSize)/rowCount;
+    // return (logoBox.height() - (rowCount-1) * paddingSize)/rowCount;
+    return logoBox.height()/rowCount;
 }
 
 function setColumnHeight(rowElements) {

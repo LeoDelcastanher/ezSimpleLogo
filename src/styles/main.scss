@@ -8,7 +8,6 @@ $glaucous: #7d82b8ff;
 $neon-blue: #5465ffff;
 
 $logoSize: 160px;
-$fontSize: 3.4rem;
 
 body {
   display: flex;
@@ -24,21 +23,27 @@ body {
   flex-flow: column;
   align-items: stretch;
   justify-content: space-between;
-  gap: 12px;
   width: $logoSize;
   height: $logoSize;
-  padding: 12px;
+  padding: 2rem;
   background-color: $gunmetal;
-  font-size: $fontSize;
+  font-size: 3.9rem;
   border-radius: 12px;
   color: white;
   text-align: center;
-  font-family: "Roboto Mono", sans-serif;
+  //font-family: "Roboto Mono", sans-serif;
+  font-family: "Ubuntu Mono", sans-serif;
   font-weight: 900;
 
   .logo-row {
     float: left;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    //.logo-column:last-child {
+    //  text-align: right;
+    //}
   }
 
   .logo-column {
