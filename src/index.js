@@ -1,5 +1,7 @@
 import './styles/main.scss'
+import './fontToggle.js'
 import $ from 'jquery'
+import _ from 'lodash'
 
 console.log('Js Loaded!');
 
@@ -16,45 +18,38 @@ function createLetters() {
     logoColumnHeight = getColumnHeight();
 
     console.log({
-        logoBoxWidth,
         logoColumnHeight
     })
 
-    logoBox.find('.logo-row').each(function(i) {
-        splitLetters($(this));
-        setColumnsWidth($(this));
-        setColumnHeight($(this));
-    });
+    splitLetters();
+    setColumnHeight();
 
     console.groupEnd();
 }
 
-function splitLetters(element) {
-    console.log('splitLetters(element)', element);
-    const originalLetters = element.text();
+function splitLetters() {
+    console.log('splitLetters(logoBox)', logoBox);
+    const words = logoBox.text().split(' ');
     let finalContent = '';
-    for (let i = 0; i < originalLetters.length; i++) {
-        finalContent += `<div class="logo-column">${originalLetters.charAt(i)}</div>`;
-    }
-    element.html(finalContent);
-}
-
-function setColumnsWidth(rowElement) {
-    console.log('setColumnsWidth(rowElement)', rowElement);
-    const columnCount = rowElement.find('.logo-column').length;
-    const rowWidth = logoBoxWidth / columnCount
-    rowElement.find('.logo-column').css('width', rowWidth+'px')
+    _.forEach(words, (word, wordIndex) => {
+        if (wordIndex === 0 || words[wordIndex - 1].length !== word.length) {
+            finalContent += `<div class="row-${word.length}-letters">`;
+        }
+        _.forEach(word, letter => {
+            finalContent += `<span class="letter">${letter}</span>`;
+        });
+        if (words[wordIndex + 1] && words[wordIndex + 1].length !== word.length) {
+            finalContent += `</div>`;
+        }
+    });
+    logoBox.html(finalContent);
 }
 
 function getColumnHeight() {
-    const rowCount = logoBox.find('.logo-row').length;
-    const paddingSize = parseInt(logoBox.css('padding-top'));
-    // return (logoBox.height() - (rowCount-1) * paddingSize)/rowCount;
-    return logoBox.height()/rowCount;
+    const rowCount = logoBox.text().split(' ').length;
+    return logoBox.height() / rowCount;
 }
 
-function setColumnHeight(rowElements) {
-    console.group('setColumnHeight(rowElements)', rowElements);
-    rowElements.find('.logo-column').css('line-height', logoColumnHeight+'px')
-    console.groupEnd();
+function setColumnHeight() {
+    logoBox.find('.letter').css('line-height', logoColumnHeight + 'px')
 }

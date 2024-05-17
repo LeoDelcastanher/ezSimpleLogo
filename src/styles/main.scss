@@ -1,4 +1,3 @@
-
 @import "colors";
 
 $gunmetal: #293132ff;
@@ -7,7 +6,7 @@ $jasper: #d5573bff;
 $glaucous: #7d82b8ff;
 $neon-blue: #5465ffff;
 
-$logoSize: 160px;
+$logoSize: 10rem;
 
 body {
   display: flex;
@@ -21,8 +20,6 @@ body {
 .logo-box {
   display: flex;
   flex-flow: column;
-  align-items: stretch;
-  justify-content: space-between;
   width: $logoSize;
   height: $logoSize;
   padding: 2rem;
@@ -35,35 +32,13 @@ body {
   font-family: "Ubuntu Mono", sans-serif;
   font-weight: 900;
 
-  .logo-row {
-    float: left;
-    width: 100%;
+  .row-3-letters {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .row-4-letters {
     display: flex;
     justify-content: space-between;
-
-    //.logo-column:last-child {
-    //  text-align: right;
-    //}
-  }
-
-  .logo-column {
-    float: left;
-  }
-
-  div {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // background: teal;
-  }
-
-  .ctrl {
-    // letter-spacing: 9px;
-  }
-  .leo {
-    // letter-spacing: 9px;
-  }
-  .del {
-    // letter-spacing: 9px;
   }
 }

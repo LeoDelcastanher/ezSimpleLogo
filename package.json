@@ -24,6 +24,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "lodash": "^4.17.21"
   }
 }
