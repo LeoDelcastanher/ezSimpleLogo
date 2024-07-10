@@ -17,7 +17,16 @@ body {
   font-size: 16px;
 }
 
-.logo-box {
+#font-box {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+}
+
+#logoBox {
   display: flex;
   flex-flow: column;
   width: $logoSize;
