@@ -9,7 +9,13 @@ let logoBox = null;
 let logoBoxWidth = null;
 let logoColumnHeight = null;
 
-createLetters();
+onInit();
+function onInit() {
+    createLetters();
+
+    $('#ubuntuFont').click(() => setFont('ubuntuMono'));
+    $('#pixefySans').click(() => setFont('pixefySans'));
+}
 
 function createLetters() {
     console.group("createLetters()");
@@ -52,4 +58,13 @@ function getColumnHeight() {
 
 function setColumnHeight() {
     logoBox.find('.letter').css('line-height', logoColumnHeight + 'px')
+}
+
+function setFont(fontName) {
+    console.group(`setFont(${fontName})`);
+
+    $('#logoBox').removeClass();
+
+
+    console.groupEnd();
 }
